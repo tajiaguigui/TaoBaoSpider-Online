@@ -17,11 +17,14 @@ from lxml import etree
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver import FirefoxOptions
 
 from Spider_Online.util import page2html, verify_re_content, doesReElementExist, calculating_time
 from Spider_Online.logger import get_logger
 
 logger = get_logger('taobao', 'log/spider.log')
+opts = FirefoxOptions()
+opts.add_argument("--headless")
 
 
 class Client(multiprocessing.Process):
@@ -37,7 +40,7 @@ class Client(multiprocessing.Process):
         self.socketid = socketid  # 爬虫任务名
         # 用户唯一标识
         self.uuid = uuid
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Firefox(firefox_options=opts)
         self.verify_switch = True
         self.flag = True  # 爬虫标志
 

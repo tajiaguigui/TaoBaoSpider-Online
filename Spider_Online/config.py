@@ -1,5 +1,5 @@
 # WangCheng
-MONGO_URL = '192.168.2.133'
+MONGO_URL = '193.112.75.62'
 # 本地
 # MONGO_URL = 'localhost'
 MONGO_DB = 'taobao'

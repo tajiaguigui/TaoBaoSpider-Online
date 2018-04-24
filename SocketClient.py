@@ -11,10 +11,10 @@ from Spider_Online.util import verify_re_content
 from Spider_Online.config import MONGO_DB, MONGO_URL, QRCODE_COLLECTION, TAOBAO_COLLECTION
 
 # 服务器
-# socketIO = SocketIO('193.112.75.62', 3000, wait_for_connection=False)
+socketIO = SocketIO('193.112.75.62', 3000, wait_for_connection=False)
 
 # 本地
-socketIO = SocketIO('192.168.2.133', 3000, wait_for_connection=False)
+#socketIO = SocketIO('192.168.2.133', 3000, wait_for_connection=False)
 
 client = pymongo.MongoClient(MONGO_URL)
 db = client[MONGO_DB]
